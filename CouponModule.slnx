@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/EndPoint/">
+    <Project Path="src/EndPoint/ApplicationAPI/ApplicationAPI.csproj" Id="c1feebd3-fca0-476d-8e68-ac59f6803775" />
+  </Folder>
+  <Folder Name="/src/Module/">
+    <Project Path="src/Module/CouponModule/CouponModule.csproj" />
+  </Folder>
+</Solution>
