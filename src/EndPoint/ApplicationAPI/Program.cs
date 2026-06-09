@@ -1,6 +1,7 @@
 using ApplicationAPI.Facade.Coupon;
 using ApplicationAPI.Infrastructure.ExceptionHandler;
 using ApplicationAPI.Infrastructure.Middlewares;
+using CouponModule.Infrastructure.DB;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi;
@@ -73,6 +74,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 app.UseGlobalExceptionHandler();
-//app.UseExceptionHandler("/error");
-//builder.Services.AddProblemDetails();
+await DbInitializer.InitializeAsync(app.Services);
 app.Run();
