@@ -105,7 +105,8 @@ json
 
 ---
 
-## 🛠️ نکات توسعه
+## 🛠️ نکات تکمیلی 
+موقع ران شدن پروژه اگر تیبل موپن فیلدی نداشته باشد سه تا دیتای فیک و رندوم در دیتابیس اضافه میشود.
 
 - **مستندسازی XML**: مستندات Swagger با XML پشتیبانی می‌شود. برای تولید فایل XML، مقدار `<GenerateDocumentationFile>true</GenerateDocumentationFile>` را در فایل `.csproj` خود تنظیم کنید.
 - **مدل پاسخ**: بیشتر نقاط پایانی `OperationResult` یا `OperationResult<T>` را برمی‌گردانند که شامل `IsSuccess`، `Message` و `Data` اختیاری است.
