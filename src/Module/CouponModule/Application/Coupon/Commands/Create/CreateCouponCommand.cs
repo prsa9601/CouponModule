@@ -1,7 +1,7 @@
 ﻿using CouponModule.Application.Shared;
+using CouponModule.Domain.Coupon;
 using CouponModule.Domain.Coupon.Builder;
 using CouponModule.Domain.Coupon.Repositories;
-using CouponModule.Domain.Shared;
 using MediatR;
 
 namespace CouponModule.Application.Coupon.Commands.Create

@@ -1,6 +1,6 @@
 ﻿using CouponModule.Application.Shared.Query;
 using CouponModule.Application.Shared.Query.Filter;
-using CouponModule.Domain.Shared;
+using CouponModule.Domain.Coupon;
 
 namespace CouponModule.Application.Coupon.Queries.DTOs
 {

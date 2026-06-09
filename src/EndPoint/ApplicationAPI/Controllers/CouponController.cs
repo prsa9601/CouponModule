@@ -53,6 +53,16 @@ namespace ApplicationAPI.Controllers
         /// </summary>
         /// <param name="command"></param>
         /// <returns>OperationResult(long)</returns>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Link = 'https://localhost:7048/api/Coupon/Validate'
+        ///     POST 
+        ///     {
+        ///       "couponCode": "CodeRandom",
+        ///       "purchaseAmount": 90000
+        ///     }
+        /// </remarks>
         [HttpPost("Validate")]
         public async Task<OperationResult<long>> ApplyDiscount(ApplyDiscountCommand command)
         {
@@ -86,6 +96,13 @@ namespace ApplicationAPI.Controllers
         /// </summary>
         /// <param name="couponId"></param>
         /// <returns>کوپن</returns>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     Link = 'https://localhost:7048/api/Coupon/'
+        ///     Get => 0543a199-a5f1-40b4-c9ed-08dec60a2a7e
+        ///      
+        /// </remarks>
         [HttpGet]
         public async Task<CouponDto?> GetId(Guid couponId)
         {

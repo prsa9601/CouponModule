@@ -1,6 +1,4 @@
-﻿using CouponModule.Domain.Shared;
-
-namespace CouponModule.Domain.Coupon.Builder
+﻿namespace CouponModule.Domain.Coupon.Builder
 {
     public interface ICouponBuilder
     {

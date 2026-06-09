@@ -1,4 +1,5 @@
-﻿using CouponModule.Domain.Coupon.Repositories;
+﻿using CouponModule.Domain.Coupon;
+using CouponModule.Domain.Coupon.Repositories;
 using CouponModule.Domain.Coupon.UnitOfWork;
 using CouponModule.Domain.Coupon.UnitOfWork.Models;
 
@@ -40,26 +41,33 @@ namespace CouponModule.Infrastructure.DB.Coupon
                 return new CouponApplyDiscountResult(false, "badRequest: tokenIsNotActive",
                 CouponApplyDiscountStatusResult.BadRequest, totalPrice);
 
-            if (coupon.Offer.Type == Domain.Shared.DiscountType.Percentage)
-            {
-                int offerPercentage = coupon.Offer.Percentage;
-                long offerAmount = (totalPrice * offerPercentage) / 100;
-                totalPrice = totalPrice - offerAmount;
-            }
+            long oldPrice = totalPrice;
+             totalPrice = DiscountCalculation(totalPrice, coupon.Offer.Type, coupon.Offer.Percentage, coupon.Offer.Amount);
 
-            else if (coupon.Offer.Type == Domain.Shared.DiscountType.FixedAmount)
-            {
-                long offerPercentage = coupon.Offer.Amount;
-                totalPrice = totalPrice - offerPercentage;
-            }
-            long offerAmountForReport = coupon.Offer.Type == Domain.Shared.DiscountType.Percentage ?
+            long offerAmountForReport = coupon.Offer.Type == DiscountType.Percentage ?
                 coupon.Offer.Percentage : coupon.Offer.Amount;
 
             return new CouponApplyDiscountResult(true, $"success: Discount Is Applyed =>" +
+                $" total Price without discount {oldPrice} =>" +
                 $" total Price with discount {totalPrice} =>" +
                 $" offer type is {coupon.Offer.Type.ToString()} => " +
                 $" offer amount is {offerAmountForReport}",
                 CouponApplyDiscountStatusResult.Success, totalPrice);
+        }
+        private long DiscountCalculation(long totalPrice, DiscountType type, int pecentageDiscount, long amountDiscount)
+        {
+            if (type == DiscountType.Percentage)
+            {
+                long offerAmount = (totalPrice * pecentageDiscount) / 100;
+                return totalPrice - offerAmount;
+            }
+
+            else if (type == DiscountType.FixedAmount)
+            {
+                return totalPrice - amountDiscount;
+            }
+            else 
+                return totalPrice;  
         }
     }
 }

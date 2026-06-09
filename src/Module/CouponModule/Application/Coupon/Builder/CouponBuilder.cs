@@ -1,6 +1,6 @@
-﻿using CouponModule.Domain.Coupon.Builder;
+﻿using CouponModule.Domain.Coupon;
+using CouponModule.Domain.Coupon.Builder;
 using CouponModule.Domain.Coupon.Service;
-using CouponModule.Domain.Shared;
 using System.Data;
 
 namespace CouponModule.Application.Coupon.Builder

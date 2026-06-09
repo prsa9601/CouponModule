@@ -30,7 +30,6 @@ namespace CouponModule.Application.Coupon
                     , typeof(GetCouponByIdQuery).Assembly
                 );
             });
-            //services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(YourHandler).Assembly));
 
 
             Infrastructure.InfrastructureConfiguration.InfrastructureConfig(services, configuration);

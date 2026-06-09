@@ -1,7 +1,7 @@
 ﻿using CouponModule.Application.Shared;
+using CouponModule.Domain.Coupon;
 using CouponModule.Domain.Coupon.Repositories;
 using CouponModule.Domain.Coupon.Service;
-using CouponModule.Domain.Shared;
 
 namespace CouponModule.Application.Coupon.Commands.Edit
 {

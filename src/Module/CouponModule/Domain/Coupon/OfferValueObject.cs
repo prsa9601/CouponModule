@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection.Metadata.Ecma335;
 
-namespace CouponModule.Domain.Shared
+namespace CouponModule.Domain.Coupon
 {
     public class OfferValueObject
     {
