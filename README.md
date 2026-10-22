@@ -21,8 +21,8 @@ Entity Framework Core (بر اساس ساختار ماژول)
 کلون کردن مخزن
 
 bash
-git clone https://github.com/your-repo/coupon-api.git
-cd coupon-api
+git clone https://github.com/prsa9601/CouponModule.git
+
 بازگرداندن وابستگی‌ها
 
 bash
